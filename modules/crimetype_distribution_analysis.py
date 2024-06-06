@@ -22,8 +22,6 @@ def show_crimetype_distribution(data):
 
 def show_crimetype_distribution_by_state(data, per_capita=False):
 
-    
-
     year_range = st.slider("Select a Year Range", data['year'].min(), data['year'].max(), (data['year'].min(), data['year'].max()), key="year_dist_state" + ("_per_capita" if per_capita else ""))
     selected_states = st.multiselect("Select States", data['state'].unique(), default=["United States Total"], key="state_dist_state" + ("_per_capita" if per_capita else ""))
     selected_crime_types = st.multiselect("Select Crime Types", data['crime_type'].unique(), default=data['crime_type'].unique(), key="crimetype_dist_state" + ("_per_capita" if per_capita else ""))

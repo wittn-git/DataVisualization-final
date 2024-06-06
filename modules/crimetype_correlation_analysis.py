@@ -20,4 +20,3 @@ def show_crimetype_correlation_analysis(data, geodata):
     plt.xlabel("Crime Type")
     plt.ylabel("Crime Type")
     st.pyplot(plt.gcf())
-    

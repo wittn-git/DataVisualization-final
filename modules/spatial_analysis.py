@@ -24,7 +24,7 @@ def show_map_total(data, geo_data):
 
 def show_spatial_analysis(data, geo_data):
     st.title("Spatial Analysis")    
-    per_capita = st.checkbox("Show Per Capita", value=False)
+    per_capita = st.checkbox("Per Capita", value=False)
     if per_capita:
         show_map_per_capita(data, geo_data)
     else:

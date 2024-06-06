@@ -17,7 +17,7 @@ def animation(yearly_data, animation_speed, per_capita, selected_crime_type, min
 def show_temporal_spatial_analysis(data, geo_data):
     st.title("Temporal-Spatial Analysis")
 
-    per_capita = st.checkbox("Show Per Capita", value=False)
+    per_capita = st.checkbox("Per Capita", value=False)
 
     year_range = st.slider("Select a Year Range", data['year'].min(), data['year'].max(), (data['year'].min(), data['year'].max()), key="year_temporal_spatial" + ("_per_capita" if per_capita else ""))
     selected_crime_type = st.selectbox("Select a Crime Type", data['crime_type'].unique(), key="crimetype_temporal_spatial" + ("_per_capita" if per_capita else ""))

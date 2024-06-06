@@ -6,7 +6,7 @@ def show_comparison_by_state(data):
 
     st.subheader("Comparison by State")
     
-    per_capita = st.checkbox("Show Per Capita", value=False)
+    per_capita = st.checkbox("Per Capita", value=False, key="cap_state_comp")
     selected_states = st.multiselect("Select States", data['state'].unique(), default=["United States Total"])
     year_range = st.slider("Select a Year Range", data['year'].min(), data['year'].max(), (data['year'].min(), data['year'].max()), key="year_state_comp")
     crime_type = st.selectbox("Select a Crime Type", data['crime_type'].unique())
@@ -20,7 +20,7 @@ def show_comparison_by_state(data):
 def show_comparison_by_crime_type(data):
     st.subheader("Comparison by Crime Type")
 
-    per_capita = st.checkbox("Show Per Capita", value=False)
+    per_capita = st.checkbox("Per Capita", value=False, key="cap_crime_comp")
     selected_crime_types = st.multiselect("Select Crime Types", data['crime_type'].unique(), default=["Violent Crime"])
     year_range = st.slider("Select a Year Range", data['year'].min(), data['year'].max(), (data['year'].min(), data['year'].max()), key="year_crime_comp")
     state = st.selectbox("Select a State", data['state'].unique())
