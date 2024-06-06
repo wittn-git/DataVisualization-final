@@ -17,7 +17,7 @@ if __name__ == "__main__":
     data = pd.read_csv("data/estimated_crimes_1979_2022.csv")
     data['state_name'].fillna('United States Total', inplace=True)
     data.drop(columns=['caveats', 'state_abbr'], inplace=True)
-    # map rape_legacy and rape_revised to rape
+    
     crime_types = data.columns[3:]
     new_rows = []
     for _, row in data.iterrows():
@@ -28,7 +28,6 @@ if __name__ == "__main__":
             if pd.notna(row[crime]):
                 new_rows.append([row['year'], row['state_name'], crime_new, row[crime], row[crime]/row['population']])
 
-   
     data = pd.DataFrame(new_rows, columns=['year', 'state', 'crime_type', 'count', "count_per_capita"])
     
     data_types = [int, str, str, int, float]
